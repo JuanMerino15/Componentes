@@ -1,14 +1,18 @@
 import 'package:componentes/providers/menu_provider.dart';
+import 'package:componentes/ui/screens/alerts.dart';
+import 'package:componentes/untils/icons_mapping.dart';
 import 'package:flutter/material.dart';
 
+
 class HomePageTemp extends StatelessWidget {
+  final IconMapping iconMap = const IconMapping();
   const HomePageTemp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Componentes de Flutter'),
+        title: const Text('componentes de flutter'),
       ),
       body: _lista(),
     );
@@ -27,32 +31,38 @@ Widget _lista() {
   // );
   return FutureBuilder(
     future: menuProvider.loadData(),
+    initialData: const [],
     builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
-      print('builder: ');
-      print(snapshot.data);
+      //     print('builder: ');
+      //   print(snapshot.data);
       return ListView(
-        children: _listaItems(snapshot.data as List<dynamic>),
+        children: _listaItems(snapshot.data as List<dynamic>, context),
       );
     },
   );
 }
 
-List<Widget> _listaItems(List<dynamic> data){
-  final List<Widget> opciones =[];
+List<Widget> _listaItems(List<dynamic> data, BuildContext context) {
+  final List<Widget> opciones = [];
+  IconMapping iconMap = const IconMapping();
 
-  data.forEach((opt){
+  data.forEach((opt) {
     final tile = ListTile(
       title: Text(opt['texto']),
-      leading: const Icon(Icons.account_box, 
-      color: Color.fromARGB(255, 20, 21, 22),),
-      trailing: const Icon(Icons.keyboard_arrow_right,
-      color: Colors.blue,
+      leading: iconMap.getIcon(opt['icon']),
+      trailing: const Icon(
+        Icons.keyboard_arrow_right,
+        color: Colors.blue,
       ),
       subtitle: Text(opt['texto2']),
       onTap: () {
-        
+        // final route = MaterialPageRoute(builder: (context){
+        //   return const AlertsScreen();
+        // });
+        Navigator.pushNamed(context, opt['ruta']);
+        //Navigator.push(context, route);
       },
-      );
+    );
     opciones
       ..add(tile)
       ..add(const Divider());

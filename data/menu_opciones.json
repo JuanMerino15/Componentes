@@ -1,38 +1,43 @@
 {
-    "nombreApp": "Componentes",
-    "iconApp" : "icon",
-    "rutas": [
+    "nombreApp": "Componentes 5a",
+    "IconApp" : "icon",
+    "rutas" : [
         {
-            "ruta":"alert",
-            "icon": "add_alert",
-            "texto": "Alertas",
-            "texto2": "Se mostraran alertas"
+            "ruta" : "alert",
+            "icon" : "add_alert",
+            "texto" : "Steelers",
+            "texto2" : "Maximo campeon de la NFL"
         },
-            {
-                "ruta": "inputs",
-                "icon": "input",
-                "texto": "Entrada de datos",
-                "texto2":"Ventana con widgets de entrada"
-
-        },
-        {
-            "ruta": "card",
-            "icon": "folder-open",
-            "texto": "Cards - Tarjetas",
-            "texto2": "Acceso a las tarjetas"
+    {
+        "ruta" : "inputs",
+        "icon" : "input",
+        "texto" : "Club America",
+         "texto2" : "Maximo campeon de la Liga MX y el mas grande de la concacaf"
     },
     {
-        "ruta": "firebase",
-        "icon": "data",
-        "texto": "Firebase Storage",
-        "texto2": "Entraras a la base de datos"
-},
-{
-    "ruta" : "camara",
-    "icon" : "camara",
-    "texto" : "tomar foto",
-    "texto2": "Tendras acceso a la camara"
-}
-
+        "ruta" : "card",
+        "icon" : "folder_open",
+        "texto" : "Kenny Pickett",
+        "texto2" : "Proximo QB franquicia de los steelers"
+    },
+    {
+        "ruta" : "firebase",
+        "icon" : "data",
+        "texto" : "La Bomba Martin",
+        "texto2" : "El maximo goleador del torneo y proximo idolo"
+    },
+    {
+        "ruta" : "listas",
+        "icon" : "list",
+        "texto" : "Najee Harris",
+        "texto2" : "Un gran corredor"
+    },
+    {
+        "ruta" : "Camara",
+        "icon" : "camera",
+        "texto" : "Troy Polamalu",
+        "texto2" : "Idolo en los steelers"  
+    }
+    
     ]
 }

@@ -1,4 +1,5 @@
 
+import 'package:componentes/ui/screens/alerts.dart';
 import 'package:componentes/ui/screens/home_page_temp.dart';
 import 'package:flutter/material.dart';
 
@@ -9,11 +10,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'App Componentes',
       debugShowCheckedModeBanner: false,
-      home: HomePageTemp(),
-      );
-    
+      //home: HomePageTemp(),
+      initialRoute: '/',
+      routes: <String, WidgetBuilder>{
+        '/' : (BuildContext context) => const HomePageTemp(),
+        'alert' : (BuildContext context) => const AlertsScreen(),
+      },
+      onGenerateRoute: (RouteSettings settings){
+        print('Ruta llamada: ${settings.name}');
+        return MaterialPageRoute(
+          builder: (BuildContext context) => const AlertsScreen()); 
+  });
   }
 }
+     
